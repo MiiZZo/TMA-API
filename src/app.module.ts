@@ -1,14 +1,14 @@
-import { AuthModule } from "./auth/auth.module";
-import { Module } from "@nestjs/common";
-import { MongooseModule } from "@nestjs/mongoose";
-import { ConfigModule } from "@nestjs/config";
-import { join } from "path";
-import { UsersModule } from "./users/users.module";
+import { AuthModule } from './auth/auth.module';
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
+import { join } from 'path';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: join(__dirname, "../env")
+      envFilePath: join(__dirname, '../env'),
     }),
     AuthModule,
     MongooseModule.forRoot(
@@ -16,10 +16,10 @@ import { UsersModule } from "./users/users.module";
       {
         useNewUrlParser: true,
         useFindAndModify: true,
-        useCreateIndex: true
-      }
+        useCreateIndex: true,
+      },
     ),
-    UsersModule
-  ]
+    UsersModule,
+  ],
 })
 export class AppModule {}

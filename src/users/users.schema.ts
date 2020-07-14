@@ -1,6 +1,6 @@
-import { Schema, Prop, SchemaFactory } from "@nestjs/mongoose";
-import { Document } from "mongoose";
-import { TodoList } from "./user.interface";
+import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
+import { TodoList } from './user.interface';
 
 @Schema()
 export class User extends Document {
